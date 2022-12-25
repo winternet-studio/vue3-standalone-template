@@ -1,14 +1,14 @@
 export default {
-    name: 'Home',
+	name: 'Home',
 
-    setup() {
-        const title = 'Home page'
-        return {title}
-    },
+	setup() {
+		const title = 'Home page';
+		return {title};
+	},
 
-    template: `
-        <div>
-            {{ title }}
-        </div>
-    `,
-  };
+	template: `
+		<div>
+			{{ title }}
+		</div>
+	`,
+};
