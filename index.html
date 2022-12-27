@@ -26,13 +26,14 @@
 	import app from './app.js'
 	const {createApp} = Vue;
 
-	// Without plugin:
-	// createApp(app).mount('#app');
+	const appInstance = createApp(app);
 
-	// With FormKit plugin:
+	// Add FormKit plugin:
 	// import { plugin, defaultConfig } from "@formkit/vue";
 	const { plugin, defaultConfig } = FormKitVue;
-	createApp(app).use(plugin, defaultConfig).mount("#app");
+	appInstance.use(plugin, defaultConfig);
+
+	appInstance.mount('#app');
 </script>
 
 </body>
