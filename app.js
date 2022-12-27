@@ -27,9 +27,16 @@ export default {
 		//url management
 		watchEffect(() => {
 			const urlpage = window.location.pathname.split('/').pop();
-			if (page.value == null) {page.value = urlpage}
-			if (page.value != urlpage) {const url = page.value ? page.value : './'; window.history.pushState({url: url}, '', url);                                }
-			window.onpopstate = function() {page.value = window.location.pathname.split('/').pop()};
+			if (page.value == null) {
+				page.value = urlpage;
+			}
+			if (page.value != urlpage) {
+				const url = page.value ? page.value : './';
+				window.history.pushState({url: url}, '', url);
+			}
+			window.onpopstate = function() {
+				page.value = window.location.pathname.split('/').pop();
+			};
 		})
 
 		return {page, pages};
