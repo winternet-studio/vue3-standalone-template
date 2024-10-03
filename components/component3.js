@@ -56,18 +56,22 @@ export default {
 		<input v-model="store.searchString" placeholder="Search title">
 		<small v-if="tabledata && store.searchString">{{ tabledata.length }} item(s) found</small>
 		<table>
-			<tr>
-				<th><a href="javascript:void(0);" v-on:click="sortByColumn = 'userId'">userId</a></th>
-				<th><a href="javascript:void(0);" v-on:click="sortByColumn = 'id'">id</a></th>
-				<th><a href="javascript:void(0);" v-on:click="sortByColumn = 'title'">title</a></th>
-				<th><a href="javascript:void(0);" v-on:click="sortByColumn = 'completed'">completed</a></th>
-			</tr>
-			<tr v-for="item in tabledata">
-				<td>{{ item.userId }}</td>
-				<td>{{ item.id }}</td>
-				<td>{{ item.title }}</td>
-				<td><input type="checkbox" :checked="item.completed"></td>
-			</tr>
+			<thead>
+				<tr>
+					<th><a href="javascript:void(0);" v-on:click="sortByColumn = 'userId'">userId</a></th>
+					<th><a href="javascript:void(0);" v-on:click="sortByColumn = 'id'">id</a></th>
+					<th><a href="javascript:void(0);" v-on:click="sortByColumn = 'title'">title</a></th>
+					<th><a href="javascript:void(0);" v-on:click="sortByColumn = 'completed'">completed</a></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr v-for="item in tabledata">
+					<td>{{ item.userId }}</td>
+					<td>{{ item.id }}</td>
+					<td>{{ item.title }}</td>
+					<td><input type="checkbox" :checked="item.completed"></td>
+				</tr>
+			</tbody>
 		</table>
 	</div>
 	`,
